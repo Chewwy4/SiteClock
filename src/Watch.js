@@ -157,10 +157,10 @@ import * as THREE from  "./jsm/three.module.js";
     Hand1.rotateZ  ((-2 * Math.PI) / 60);   
 },999);
 
-    const watchFacePlane = watchMesh.getObjectByName('watchface', true);
-    const glasscover = watchMesh.getObjectByName('glasscover', true);
 
 //show/hide face
+    // const watchFacePlane = watchMesh.getObjectByName('watchface', true);
+    // const glasscover = watchMesh.getObjectByName('glasscover', true);
 // document.getElementById("switchFaceBtn1").onclick = function () {
 // console.log('clicked to remove watch face');
 
@@ -216,10 +216,7 @@ import * as THREE from  "./jsm/three.module.js";
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.toneMapping = THREE.ACESFilmicToneMapping;
-			renderer.toneMappingExposure = 0.75;
-
-            renderer.gammaOutput = true ;
-            renderer.gammaFactor = 2.2; 
+			renderer.toneMappingExposure = 0.75; 
             renderer.shadowMap.enabled = true;
 			//renderer.outputEncoding = THREE.sRGBEncoding;
            // renderer.shadowMap.type = THREE.PCFShadowMap;
