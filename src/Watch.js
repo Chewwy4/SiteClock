@@ -95,11 +95,11 @@ import * as THREE from  "./jsm/three.module.js";
 
         //hrd environment
 
-            // new RGBELoader()
-			// 		.setPath( './src/textures/equirectangular/' )
-			// 		.load( 'royal_esplanade_1k.hdr', function ( texture ) {
+            new RGBELoader()
+					.setPath( './src/textures/equirectangular/' )
+					.load( 'royal_esplanade_1k.hdr', function ( texture ) {
 
-			// 			texture.mapping = THREE.EquirectangularReflectionMapping;
+						texture.mapping = THREE.EquirectangularReflectionMapping;
 						//scene.background = texture;
                         scene.environment = texture;
                         scene.background = new THREE.Color(0xffffff);
@@ -159,16 +159,17 @@ import * as THREE from  "./jsm/three.module.js";
 
     const watchFacePlane = watchMesh.getObjectByName('watchface', true);
     const glasscover = watchMesh.getObjectByName('glasscover', true);
-//show/hide
-document.getElementById("switchFaceBtn1").onclick = function () {
-console.log('clicked to remove watch face');
-//watchMesh.position.y = 450;
-setMaterial (watchFacePlane, alphamaterial);
-};
-document.getElementById("switchFaceBtn2").onclick = function () {
-console.log('clicked to replace watch face');
-setMaterial (watchFacePlane, watchFacePlaneMat);
-};		
+
+//show/hide face
+// document.getElementById("switchFaceBtn1").onclick = function () {
+// console.log('clicked to remove watch face');
+
+// setMaterial (watchFacePlane, alphamaterial);
+// };
+// document.getElementById("switchFaceBtn2").onclick = function () {
+// console.log('clicked to replace watch face');
+// setMaterial (watchFacePlane, watchFacePlaneMat);
+// };		
 
     })
         });  
