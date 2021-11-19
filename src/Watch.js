@@ -130,36 +130,40 @@ import * as THREE from  "./jsm/three.module.js";
                 }
             } );  
 
-            // var chromematerial = new THREE.MeshPhongMaterial({
-            //     //map: framemap,
-            //     //emissive: 0x2E2E2E,
-            //     color: 0x848484,
-            //     //	ambient: 0x000000,
-            //     //combine: THREE.MixOperation,
-            //     specular: 0x424242,
-            //     shininess: 275,
-            //   //  bumpMap: bmap,
-            //     bumpScale: 0.0010,
-            //     //envMap: reflectionCube,
-            //     refractionRatio: 400.95,
-            //     reflectivity: 0.75,
-            // });
 
-            // let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
+let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
+            
 
-            //             // Set  Material Function
-            //             let setMaterial = function (node, material) {
-            //                 node.material = material;
-            //                 if (node.children) {
-            //                     for (let i = 0; i < node.children.length; i++) {
-            //                         setMaterial(node.children[i], material);
-            //                     }
-            //                 }
-            //             };
+        var chromematerial = new THREE.MeshPhongMaterial({
+                //map: framemap,
+                emissive: 0xFF0000,
+                color: 0x848484,
+                //	ambient: 0x000000,
+                //combine: THREE.MixOperation,
+               // specular: 0x424242,
+               // shininess: 275,
+              //  bumpMap: bmap,
+               // bumpScale: 0.0010,
+                //envMap: reflectionCube,
+               // refractionRatio: 400.95,
+                //reflectivity: 0.75,
+            });
+
             
-            //             // Set the material on each object
+
+                        // Set  Material Function
+                        let setMaterial = function (node, material) {
+                            node.material = material;
+                            if (node.children) {
+                                for (let i = 0; i < node.children.length; i++) {
+                                    setMaterial(node.children[i], material);
+                                }
+                            }
+                        };
             
-            //             setMaterial(mainPlate, chromematerial);
+            // Set the material on each object
+            
+            setMaterial(mainPlate, chromematerial);
 
 
             watchMesh.scale.x = watchMesh.scale.y = watchMesh.scale.z = 75;
