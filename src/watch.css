@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(253, 253, 253);
+    color: rgb(255, 255, 255);
+    margin:0;
+    padding:0;
+}
+#threecontainer {
+    background-color: rgb(53, 53, 53);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 0;
+
+
+}
+.txtQuoteWrapper{
+position: relative;
+z-index: 10000;
+left:0;
+width: 35%;
+/* margin-left: 4em; */
+/* bottom: 15%; */
+display: flex;	
+background-color: brown;
+}
+@media screen and (max-width: 600px) {
+.txtQuoteWrapper {
+width: 80%;
+bottom:5%;
+}
+} 
+.txtQuote{
+    color: black;
+font-size: 30px;
+margin: auto;
+display: none;
+font-family:'Times New Roman', Times, serif;
+font-style: italic;
+user-select: none;
+}
+
+sub{font-style: normal;}
+
+.switchFacewBtnWrapper{
+position: absolute;
+/* left:2em; */
+display: flex;
+/* left:15em; */
+z-index: 10000;
+top:5%
+}
+@media screen and (max-width: 600px) {
+.switchFacewBtnWrapper {
+left:1em;
+margin: auto;
+top:70%;
+}
+} 
+.switchFaceImg{
+height: 2em;
+width: 2em;
+left:0;
+
+padding:20px;
+}
+@media screen and (max-width: 600px) {
+.switchFaceImg {
+height: 2em;
+width: 2em;	
+}
+} 
+@media screen and (max-height: 500px) {
+.switchFaceImg {
+height:2em;
+width: 2em;	
+}
+} 
