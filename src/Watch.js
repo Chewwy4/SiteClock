@@ -134,7 +134,7 @@ import * as THREE from  "./jsm/three.module.js";
 let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
             
 
-        var chromematerial = new THREE.MeshPhongMaterial({
+        var chromematerial = new THREE.MeshLambertMaterial({
                 //map: framemap,
                 emissive: 0xFF0000,
                 color: 0x848484,
@@ -253,7 +253,7 @@ let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
             spotLight.target.position.set( 50, 0, 0 );
             scene.add( spotLight.target );
             //Renderer
-            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, precision: 'mediump' });
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.toneMapping = THREE.ACESFilmicToneMapping;
