@@ -114,7 +114,7 @@ import * as THREE from  "./jsm/three.module.js";
         const loader = new GLTFLoader().setPath( 'src/models/' );
         loader.setKTX2Loader( ktx2Loader );
         loader.setMeshoptDecoder( MeshoptDecoder );
-        loader.load( 'scene21.glb', function ( gltf ) {
+        loader.load( 'newgltbfromblender.glb', function ( gltf ) {
             watchMesh = gltf.scene;
             watchMesh.traverse( function ( child ) {
 
@@ -124,7 +124,6 @@ import * as THREE from  "./jsm/three.module.js";
                 }
             } );  
           
-            
             watchMesh.scale.x = watchMesh.scale.y = watchMesh.scale.z = 75;
             watchMesh.position.x = -25;
             scene.add( watchMesh);
