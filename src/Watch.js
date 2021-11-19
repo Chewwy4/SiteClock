@@ -124,12 +124,44 @@ import * as THREE from  "./jsm/three.module.js";
                     mat.color = color;
                    // mat.wireframe = true;
                     //roughnessMipmapper.generateMipmaps( child.material );
-                   child.material = mat;
+                   // child.material = mat;
                     child.castShadow = true;
                     child.receiveShadow = true;
                 }
             } );  
-          
+
+            var chromematerial = new THREE.MeshPhongMaterial({
+                //map: framemap,
+                //emissive: 0x2E2E2E,
+                color: 0x848484,
+                //	ambient: 0x000000,
+                //combine: THREE.MixOperation,
+                specular: 0x424242,
+                shininess: 275,
+              //  bumpMap: bmap,
+                bumpScale: 0.0010,
+                //envMap: reflectionCube,
+                refractionRatio: 400.95,
+                reflectivity: 0.45,
+            });
+
+            let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
+
+                        // Set  Material Function
+                        let setMaterial = function (node, material) {
+                            node.material = material;
+                            if (node.children) {
+                                for (let i = 0; i < node.children.length; i++) {
+                                    setMaterial(node.children[i], material);
+                                }
+                            }
+                        };
+            
+                        // Set the material on each object
+            
+                        setMaterial(mainPlate, chromematerial);
+
+
             watchMesh.scale.x = watchMesh.scale.y = watchMesh.scale.z = 75;
             watchMesh.position.x = -25;
             scene.add( watchMesh);
