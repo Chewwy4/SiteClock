@@ -114,7 +114,7 @@ import * as THREE from  "./jsm/three.module.js";
         const loader = new GLTFLoader().setPath( 'src/models/' );
         loader.setKTX2Loader( ktx2Loader );
         loader.setMeshoptDecoder( MeshoptDecoder );
-        loader.load( 'scene(21).glb', function ( gltf ) {
+        loader.load( 'scene21.glb', function ( gltf ) {
             watchMesh = gltf.scene;
             watchMesh.traverse( function ( child ) {
 
@@ -257,17 +257,11 @@ import * as THREE from  "./jsm/three.module.js";
                 1.75
             );
             composer.addPass(colorCorrectionPass);
-
-
             sepiaPass = new ShaderPass(SepiaShader);
-            sepiaPass.uniforms["amount"].value = 0.5;
+            sepiaPass.uniforms["amount"].value = 0.75;
             composer.addPass(sepiaPass) 
-
-
             //stats = new Stats();
             //container.appendChild(stats.dom);
-
-        
         }    
             window.addEventListener("resize", onWindowResize);
             document.addEventListener( 'mousemove', onMouseMove, false );
@@ -315,12 +309,10 @@ window.addEventListener("load", onLoadFunction);
         //
 
         function animate() {
-    
+    //move camera
             target.x = ( 1 - mouse.x ) * 0.00012;
               target.y = ( 1 - mouse.y ) * 0.00012;
     
-        
-              
             requestAnimationFrame(animate);
             const delta = clock.getDelta();
     
@@ -346,17 +338,13 @@ window.addEventListener("load", onLoadFunction);
         }
 
         function render() {
-
             const delta = clock.getDelta();
 
             if ( mixer !== undefined ) {
 
                 mixer.update( delta );
-
             }
-
             renderer.render( scene, camera );
-
             //composer.render();
             //renderer.render(scene, camera);
         }
