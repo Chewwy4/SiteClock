@@ -131,39 +131,38 @@ import * as THREE from  "./jsm/three.module.js";
             } );  
 
 
-let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
+// let mainPlate = watchMesh.getObjectByName("WatchRimT", true);
             
 
-        var chromematerial = new THREE.MeshLambertMaterial({
-                //map: framemap,
-                emissive: 0xFF0000,
-                color: 0x848484,
-                //	ambient: 0x000000,
-                //combine: THREE.MixOperation,
-               // specular: 0x424242,
-               // shininess: 275,
-              //  bumpMap: bmap,
-               // bumpScale: 0.0010,
-                //envMap: reflectionCube,
-               // refractionRatio: 400.95,
-                //reflectivity: 0.75,
-            });
+//         var chromematerial = new THREE.MeshLambertMaterial({
+//                 //map: framemap,
+//                 emissive: 0xFF0000,
+//                 color: 0x848484,
+//                 //	ambient: 0x000000,
+//                 //combine: THREE.MixOperation,
+//                // specular: 0x424242,
+//                // shininess: 275,
+//               //  bumpMap: bmap,
+//                // bumpScale: 0.0010,
+//                 //envMap: reflectionCube,
+//                // refractionRatio: 400.95,
+//                 //reflectivity: 0.75,
+//             });
 
             
 
-                        // Set  Material Function
-                        let setMaterial = function (node, material) {
-                            node.material = material;
-                            if (node.children) {
-                                for (let i = 0; i < node.children.length; i++) {
-                                    setMaterial(node.children[i], material);
-                                }
-                            }
-                        };
+//                         // Set  Material Function
+//                         let setMaterial = function (node, material) {
+//                             node.material = material;
+//                             if (node.children) {
+//                                 for (let i = 0; i < node.children.length; i++) {
+//                                     setMaterial(node.children[i], material);
+//                                 }
+//                             }
+//                         };
             
-            // Set the material on each object
-            
-            setMaterial(mainPlate, chromematerial);
+//             // Set the material on each object
+//             setMaterial(mainPlate, chromematerial);
 
 
             watchMesh.scale.x = watchMesh.scale.y = watchMesh.scale.z = 75;
@@ -324,7 +323,7 @@ window.addEventListener("load", onLoadFunction);
     }
       }      
        
-//rotate camera when moving camera
+        //rotate camera when moving camera
     function onMouseMove( event ) {
             mouse.x = ( event.clientX - windowHalf.x );
             mouse.y = ( event.clientY - windowHalf.x );
