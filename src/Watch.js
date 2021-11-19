@@ -119,6 +119,12 @@ import * as THREE from  "./jsm/three.module.js";
             watchMesh.traverse( function ( child ) {
 
                 if ( child.isMesh ) {
+                    let mat = new THREE.MeshPhongMaterial;
+                    let color = new THREE.Color(0xFF0000);
+                    mat.color = color;
+                   // mat.wireframe = true;
+                    //roughnessMipmapper.generateMipmaps( child.material );
+                   child.material = mat;
                     child.castShadow = true;
                     child.receiveShadow = true;
                 }
