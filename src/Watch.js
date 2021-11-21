@@ -165,7 +165,7 @@ import * as THREE from  "./jsm/three.module.js";
 //             setMaterial(mainPlate, chromematerial);
 
 
-            watchMesh.scale.x = watchMesh.scale.y = watchMesh.scale.z = 85;
+            watchMesh.scale.x = watchMesh.scale.y = watchMesh.scale.z = 100;
             watchMesh.position.x = -25;
             scene.add( watchMesh);
             render();
